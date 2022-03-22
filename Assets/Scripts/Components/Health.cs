@@ -18,7 +18,6 @@ public class Health : MonoBehaviour
     void Update () 
     {
         if (currentHealth <= 0) isDead = true;
-        TakeDamage(1);
     }
 
     private IEnumerator _TakeDamage (int _damage) 
