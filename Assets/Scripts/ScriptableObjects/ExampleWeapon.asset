@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d4c5a126f64db8dfa0b7e60e3b8c66a, type: 3}
-  m_Name: Example
+  m_Name: ExampleWeapon
   m_EditorClassIdentifier: 
   damage: 1
-  rateOfFirePerSecond: 1
-  projectileRadius: 1
+  rateOfFirePerSecond: 3
+  projectileRadius: 0.75
   speedUnitsPerSecond: 10
-  numberOfProjectilesPerShot: 1
-  angleSecondaryProjectiles: 0
-  offsetInUnitsOrDegrees: 0
+  numberOfProjectilesPerShot: 3
+  angleSecondaryProjectiles: 1
+  offsetInUnitsOrDegrees: 120
   projectileExplodes: 0
-  explosionTime: 5
+  explosionTime: 2
   explosionLingeringPeriod: 0.5
-  explosionRadius: 5
+  explosionRadius: 2
   projectileColor: {r: 0, g: 0, b: 0, a: 1}
   explosionColor: {r: 1, g: 0, b: 0, a: 1}

@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
     public bool explodes;
     public float explosionTime;
     public float explosionLingeringPeriod;
+    public float explosionRadius;
     public Color explosionColor;
 
     //These variables store references to components
@@ -20,7 +21,7 @@ public class Projectile : MonoBehaviour
     //Flag for whether the projectile has begun explosion
     private bool isExploding;
 
-    void Awake()
+    void Start()
     {
         //Assign references to components
         rb = GetComponent<Rigidbody2D>();
@@ -33,10 +34,24 @@ public class Projectile : MonoBehaviour
 
         sprite.color = color; //sets the color of the projectile's sprite
 
+        if (explodes) StartCoroutine(Explode());
     }
 
-    void Update()
+    void Update () //Just deletes any stray projectiles once they get too far from the arena
     {
-        
+        Vector2 position = transform.position;
+        if (position.x < -20 || position.x > 20) Destroy(gameObject);
+        if (position.y < -20 || position.y > 20) Destroy(gameObject);
+    }
+
+    IEnumerator Explode () //Logic for when the projectile explodes
+    {
+        yield return new WaitForSeconds(explosionTime); //Waits for the specified explosion time
+        isExploding = true; //Sets the flag for whether the projectile is exploding
+        rb.velocity = Vector2.zero; //Stops the projectile's movement
+        transform.localScale = Vector2.one * explosionRadius; //Resizes the projectile
+        sprite.color = explosionColor; //Sets the color of the projectile's sprite
+        yield return new WaitForSeconds(explosionLingeringPeriod); //Waits for the specified lingering period
+        Destroy(gameObject); //Deletes the projectile
     }
 }
