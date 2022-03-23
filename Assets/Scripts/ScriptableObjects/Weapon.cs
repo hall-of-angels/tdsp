@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewProjectile", menuName = "Projectile")]
+//this allows a weapon asset to be created from the asset creation menu
+[CreateAssetMenu(fileName = "NewWeapon", menuName = "Weapon")]
 public class Weapon : ScriptableObject
 {
     public float 
@@ -11,7 +12,8 @@ public class Weapon : ScriptableObject
         projectileRadius = 1,
         speedUnitsPerSecond = 10;
     public int numberOfProjectilesPerShot = 1;
-    public bool angleSecondaryProjectiles =  false;
+    //angleSecondaryProjectiles: if false, the position of secondary projectiles is offset. if true, secondary projectiles are angled.
+    public bool angleSecondaryProjectiles =  false; 
     public float offsetInUnitsOrDegrees = 0;
 
     public bool projectileExplodes = false;
