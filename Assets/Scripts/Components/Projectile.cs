@@ -29,7 +29,7 @@ public class Projectile : MonoBehaviour
     
         transform.localScale = Vector2.one * size; //sets the size of the projectile by scaling the transform
 
-        //sets speed of rigidbody, projectiles will be spawned as a child of the player so this direction will rotate with the player
+        //sets speed of rigidbody, projectiles will be spawned at the same position and rotation as the player so this direction will rotate with the player
         rb.velocity = transform.up * speed; 
 
         sprite.color = color; //sets the color of the projectile's sprite

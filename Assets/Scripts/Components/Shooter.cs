@@ -21,15 +21,19 @@ public class Shooter : MonoBehaviour
         {
             for (int i = 0; i < weapon.numberOfProjectilesPerShot; i++) //For each projectile that needs to be spawned
             {
-                Transform projectileObject = Instantiate(projectilePrefab).transform; //Instantiate a projectile and store a reference to it
-                Projectile projectile = projectileObject.GetComponent<Projectile>(); //Store the projectile component of the projectile
+                 //Instantiate a projectile at the position and angle of the player, and then store a reference to it
+                Transform projectileTransform = Instantiate(projectilePrefab, transform.position, transform.rotation).transform;
+                Projectile projectile = projectileTransform.GetComponent<Projectile>(); //Store the projectile component of the projectile
 
                 //Calculate offset value using equation detailed in planning document
                 float offset = ((weapon.offsetInUnitsOrDegrees * (weapon.numberOfProjectilesPerShot - 1)) / 2) - weapon.offsetInUnitsOrDegrees * i;
 
                 //Depending on whether the offset is positional or angular, apply the desired offset
-                if (weapon.angleSecondaryProjectiles) projectileObject.eulerAngles = new Vector3(0,0,offset);
-                else projectileObject.position = new Vector3(offset,0,0);
+                if (weapon.angleSecondaryProjectiles) projectileTransform.eulerAngles += Vector3.forward * offset;
+                else projectileTransform.position += (transform.right * offset);
+
+                //Offset each projectile so that it doesn't spawn inside the player
+                projectileTransform.position += projectileTransform.up * projectileTransform.localScale.x;
 
                 //Pass all the specified variables through to the projectile
                 projectile.size = weapon.projectileRadius;

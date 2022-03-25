@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: ExampleWeapon
   m_EditorClassIdentifier: 
   damage: 1
-  rateOfFirePerSecond: 3
+  rateOfFirePerSecond: 10
   projectileRadius: 0.75
-  speedUnitsPerSecond: 10
-  numberOfProjectilesPerShot: 3
-  angleSecondaryProjectiles: 1
-  offsetInUnitsOrDegrees: 120
+  speedUnitsPerSecond: 20
+  numberOfProjectilesPerShot: 2
+  angleSecondaryProjectiles: 0
+  offsetInUnitsOrDegrees: 1
   projectileExplodes: 0
-  explosionTime: 2
-  explosionLingeringPeriod: 0.5
-  explosionRadius: 2
-  projectileColor: {r: 0, g: 0, b: 0, a: 1}
-  explosionColor: {r: 1, g: 0, b: 0, a: 1}
+  explosionTime: 0.5
+  explosionLingeringPeriod: 3
+  explosionRadius: 15
+  projectileColor: {r: 0.1981132, g: 0.1790738, b: 0.16353685, a: 1}
+  explosionColor: {r: 0.17517462, g: 0.5943396, b: 0.16540584, a: 1}
