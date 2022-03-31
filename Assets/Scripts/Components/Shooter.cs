@@ -8,6 +8,7 @@ public class Shooter : MonoBehaviour
     public bool firing; //Input on whether the weapon is being fired
     public float rateOfFireTimer; //Timer which makes sure the projectile fires according to its rate of fire
     private GameObject projectilePrefab; //Stores projectile prefab so that it can be instantiated
+    public string tagsToDamage;
 
     void Awake () 
     {
@@ -36,6 +37,7 @@ public class Shooter : MonoBehaviour
                 projectileTransform.position += projectileTransform.up * projectileTransform.localScale.x;
 
                 //Pass all the specified variables through to the projectile
+                projectile.damage = weapon.damage;
                 projectile.size = weapon.projectileRadius;
                 projectile.speed = weapon.speedUnitsPerSecond;
                 projectile.color = weapon.projectileColor;
@@ -44,6 +46,7 @@ public class Shooter : MonoBehaviour
                 projectile.explosionLingeringPeriod = weapon.explosionLingeringPeriod;
                 projectile.explosionColor = weapon.explosionColor;
                 projectile.explosionRadius = weapon.explosionRadius;
+                projectile.tagsToDamage = tagsToDamage;
             }
             //Sets timer for fire rate
             rateOfFireTimer = 1 / weapon.rateOfFirePerSecond;

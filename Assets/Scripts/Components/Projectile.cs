@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     //These variables are all passed in by the Shooter component
+    public int damage;
     public float size;
     public float speed;
     public Color color;
@@ -13,6 +14,7 @@ public class Projectile : MonoBehaviour
     public float explosionLingeringPeriod;
     public float explosionRadius;
     public Color explosionColor;
+    public string tagsToDamage;
 
     //These variables store references to components
     private Rigidbody2D rb;
@@ -53,5 +55,14 @@ public class Projectile : MonoBehaviour
         sprite.color = explosionColor; //Sets the color of the projectile's sprite
         yield return new WaitForSeconds(explosionLingeringPeriod); //Waits for the specified lingering period
         Destroy(gameObject); //Deletes the projectile
+    }
+
+    void OnTriggerStay2D (Collider2D col) 
+    {
+        if (tagsToDamage.Contains(col.gameObject.tag)) 
+        {
+            if ((explodes && isExploding) || !explodes)
+                col.gameObject.GetComponent<Health>().TakeDamage(damage);
+        }
     }
 }

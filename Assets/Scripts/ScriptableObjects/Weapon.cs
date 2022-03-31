@@ -6,8 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewWeapon", menuName = "Weapon")]
 public class Weapon : ScriptableObject
 {
-    public float 
-        damage = 1,
+    public int damage = 1;
+    public float
         rateOfFirePerSecond = 1,
         projectileRadius = 1,
         speedUnitsPerSecond = 10;

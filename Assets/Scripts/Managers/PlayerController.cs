@@ -10,18 +10,34 @@ public class PlayerController : MonoBehaviour
     private Mover mover;
     //Stores reference to the player's shooter component
     private Shooter shooter;
+    private Health health;
+    private Color originalColor;
 
     void Awake()
     {
         inputManager = new PlayerInput(); //Creates an instance of the player controller and stores it
         mover = GetComponent<Mover>(); //Gets the player's mover component
         shooter = GetComponent<Shooter>(); //Gets the player's shooter component
+        health = GetComponent<Health>();
 
         //When the movement input is performed, take the input as a Vector2 and pass it into the Move() function
         inputManager.Main.Move.performed += input => Move(input.ReadValue<Vector2>());
         //When the shooting/look direction input is performed, take the input as a Vector2 and pass it into the ShootLook() function
         inputManager.Main.ShootLook.performed += input => ShootLook(input.ReadValue<Vector2>());
         inputManager.Main.ShootLook.canceled +=_=> shooter.firing = false; //Stops the player from shooting when the input is not being performed
+        originalColor = transform.GetComponentInChildren<SpriteRenderer>().color;
+    }
+
+    void Update () 
+    {
+        if (health.isDead) {
+            mover.inputX = 0;
+            mover.inputY = 0;
+            this.enabled = false;
+            shooter.enabled = false;
+        }
+        if (health.currentlyInvincible) transform.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+        else transform.GetComponentInChildren<SpriteRenderer>().color = originalColor;
     }
 
     void Move (Vector2 input) //Applies the movement input to the input of the Mover component of the player

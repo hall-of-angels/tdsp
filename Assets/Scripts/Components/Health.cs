@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float invincibilityPeriod = 0.5f; //in seconds
     [SerializeField] private int currentHealth;
     public bool isDead = false; //flag for whether the entity has died
-    private bool currentlyInvincible = false; //flag for whether the entity is currently in an invincibility period
+    public bool currentlyInvincible = false; //flag for whether the entity is currently in an invincibility period
 
     void Awake()
     {
@@ -23,11 +23,12 @@ public class Health : MonoBehaviour
 
     private IEnumerator _TakeDamage (int _damage) //coroutine which handles taking damage and the invincibility period
     {
-        if (currentlyInvincible) yield break; //stops the coroutine if the player is in an invincibility period
-        currentHealth -= _damage; //takes the specified amount of damage off of the current health
-        currentlyInvincible = true; //begins invincibility period
-        yield return new WaitForSeconds(invincibilityPeriod); //begins timer for invincibility period
-        currentlyInvincible = false; //ends invincibility period after the timer ends
+        if (!currentlyInvincible) {//stops the coroutine if the player is in an invincibility period
+            currentHealth -= _damage; //takes the specified amount of damage off of the current health
+            currentlyInvincible = true; //begins invincibility period
+            yield return new WaitForSeconds(invincibilityPeriod); //begins timer for invincibility period
+            currentlyInvincible = false; //ends invincibility period after the timer ends
+        } 
     }
 
     //this is just to provide an easier way of calling the TakeDamage logic without having to call a coroutine the normal way
