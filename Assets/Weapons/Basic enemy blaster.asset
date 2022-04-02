@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   rateOfFirePerSecond: 1.5
-  projectileRadius: 1
+  projectileRadius: 0.75
   speedUnitsPerSecond: 10
   numberOfProjectilesPerShot: 1
   angleSecondaryProjectiles: 0

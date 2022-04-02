@@ -437,6 +437,7 @@ GameObject:
   - component: {fileID: 1537454427}
   - component: {fileID: 1537454428}
   - component: {fileID: 1537454429}
+  - component: {fileID: 1537454430}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: GameController
@@ -485,119 +486,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120512e5cec26b84b83bac4439788b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStarted: 0
-  seed: 
---- !u!1001 &1751813795
-PrefabInstance:
+--- !u!114 &1537454430
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3571150400238539210, guid: 190d9fd8bfdf7174c9392ead774c3b22, type: 3}
-      propertyPath: m_Name
-      value: BasicBomber
-      objectReference: {fileID: 0}
-    - target: {fileID: 3571150400238539221, guid: 190d9fd8bfdf7174c9392ead774c3b22, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3571150400238539221, guid: 190d9fd8bfdf7174c9392ead774c3b22, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3571150400238539221, guid: 190d9fd8bfdf7174c9392ead774c3b22, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3571150400238539221, guid: 190d9fd8bfdf7174c9392ead774c3b22, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3571150400238539221, guid: 190d9fd8bfdf7174c9392ead774c3b22, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3571150400238539221, guid: 190d9fd8bfdf7174c9392ead774c3b22, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3571150400238539221, guid: 190d9fd8bfdf7174c9392ead774c3b22, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3571150400238539221, guid: 190d9fd8bfdf7174c9392ead774c3b22, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3571150400238539221, guid: 190d9fd8bfdf7174c9392ead774c3b22, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3571150400238539221, guid: 190d9fd8bfdf7174c9392ead774c3b22, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3571150400238539221, guid: 190d9fd8bfdf7174c9392ead774c3b22, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 190d9fd8bfdf7174c9392ead774c3b22, type: 3}
---- !u!1001 &2038458056
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4727645715024767382, guid: 6a47f0cecf6a6834b95826c5c9c5008d, type: 3}
-      propertyPath: m_Name
-      value: BasicBlaster
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727645715024767391, guid: 6a47f0cecf6a6834b95826c5c9c5008d, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727645715024767391, guid: 6a47f0cecf6a6834b95826c5c9c5008d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727645715024767391, guid: 6a47f0cecf6a6834b95826c5c9c5008d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727645715024767391, guid: 6a47f0cecf6a6834b95826c5c9c5008d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727645715024767391, guid: 6a47f0cecf6a6834b95826c5c9c5008d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727645715024767391, guid: 6a47f0cecf6a6834b95826c5c9c5008d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727645715024767391, guid: 6a47f0cecf6a6834b95826c5c9c5008d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727645715024767391, guid: 6a47f0cecf6a6834b95826c5c9c5008d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727645715024767391, guid: 6a47f0cecf6a6834b95826c5c9c5008d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727645715024767391, guid: 6a47f0cecf6a6834b95826c5c9c5008d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727645715024767391, guid: 6a47f0cecf6a6834b95826c5c9c5008d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6a47f0cecf6a6834b95826c5c9c5008d, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537454426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a163209e97f978b43931b5d608f839a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNumber: 0
+  spawnableEnemies:
+  - {fileID: 4727645715024767382, guid: 6a47f0cecf6a6834b95826c5c9c5008d, type: 3}
+  - {fileID: 3571150400238539210, guid: 190d9fd8bfdf7174c9392ead774c3b22, type: 3}
+  minWaveEnemyCountMultiplier: 0.5
+  maxWaveEnemyCountMultiplier: 1
+  timeUntilEnemiesAreEnabled: 0.5
+  spawnRadius: 5
+  spawnWave: 0

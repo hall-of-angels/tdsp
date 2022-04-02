@@ -29,6 +29,11 @@ public class EnemyController : MonoBehaviour
         originalColor = sprite.color; //Stores original color
     }
 
+    private void Start()
+    {
+        transform.up = -(transform.position - GameObject.FindWithTag("Player").transform.position).normalized; //Points enemy towards player when spawned
+    }
+
     void Update()
     {
         directionToPlayer = -(transform.position - GameObject.FindWithTag("Player").transform.position).normalized; //Gets the direction towards the player, normalized
@@ -37,8 +42,8 @@ public class EnemyController : MonoBehaviour
         //Sets the input values of the enemy's mover to the direction toward the player
         mover.inputX = transform.up.x;
         mover.inputY = transform.up.y;
-        if (health.isDead) Destroy(gameObject);//If the enemy dies, destroy it
-        if (health.currentlyInvincible) sprite.color = Color.red;//If the enemy is in an invincibility period, turn it red
-        else sprite.color = originalColor;//Otherwise, set it back to its original color.
+        if (health.isDead) Destroy(gameObject); //If the enemy dies, destroy it
+        if (health.currentlyInvincible) sprite.color = Color.red; //If the enemy is in an invincibility period, turn it red
+        else sprite.color = originalColor; //Otherwise, set it back to its original color.
     }
 }
