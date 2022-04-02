@@ -12,7 +12,7 @@ public class Walls : MonoBehaviour
     private Transform leftCollider;
     private Transform rightCollider;
     private Vector3 cameraPos;
-    // Use this for initialization
+    
     void Awake () {
     //Generate our empty objects
         topCollider = new GameObject().transform;

@@ -57,12 +57,12 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject); //Deletes the projectile
     }
 
-    void OnTriggerStay2D (Collider2D col) 
+    void OnTriggerStay2D (Collider2D col) //Run this logic as long as the trigger of any projectile is within another collider
     {
-        if (tagsToDamage.Contains(col.gameObject.tag)) 
+        if (tagsToDamage.Contains(col.gameObject.tag)) //If the tag of the collided object is within the list of tags to do damage to
         {
-            if ((explodes && isExploding) || !explodes)
-                col.gameObject.GetComponent<Health>().TakeDamage(damage);
+            if ((explodes && isExploding) || !explodes) //If the projectile is an exploder and is exploding, or if it is not an exploder in general
+                col.gameObject.GetComponent<Health>().TakeDamage(damage); //Take the amount of damage specified by the weapon
         }
     }
 }
