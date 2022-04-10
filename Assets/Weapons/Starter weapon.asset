@@ -16,7 +16,7 @@ MonoBehaviour:
   rateOfFirePerSecond: 7.5
   projectileRadius: 0.75
   speedUnitsPerSecond: 20
-  numberOfProjectilesPerShot: 0
+  numberOfProjectilesPerShot: 1
   angleSecondaryProjectiles: 0
   offsetInUnitsOrDegrees: 20
   projectileExplodes: 0

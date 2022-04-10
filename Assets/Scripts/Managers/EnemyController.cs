@@ -10,6 +10,9 @@ public class EnemyController : MonoBehaviour
     private Shooter shooter;
     //Stores reference to the enemy's shooter component
     private Health health;
+    
+    //Value added to score on death
+    public int scoreValue = 100;
 
     private Vector2 directionToPlayer; //Stores the direction to the player
 
@@ -42,7 +45,11 @@ public class EnemyController : MonoBehaviour
         //Sets the input values of the enemy's mover to the direction toward the player
         mover.inputX = transform.up.x;
         mover.inputY = transform.up.y;
-        if (health.isDead) Destroy(gameObject); //If the enemy dies, destroy it
+        if (health.isDead) {
+            //If the enemy dies, add it to the score and destroy it
+            GameObject.FindWithTag("GameController").GetComponent<ScoreManager>().currentScore += scoreValue;
+            Destroy(gameObject);
+        }
         if (health.currentlyInvincible) sprite.color = Color.red; //If the enemy is in an invincibility period, turn it red
         else sprite.color = originalColor; //Otherwise, set it back to its original color.
     }

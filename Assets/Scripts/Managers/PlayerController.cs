@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sprite;
     //Stores original color of the sprite visual
     private Color originalColor;
+
+    public GameObject healthText;
 
     void Awake()
     {
@@ -41,10 +44,13 @@ public class PlayerController : MonoBehaviour
             mover.inputY = 0; 
             this.enabled = false; //Disable the player controller
             shooter.enabled = false; //Disable the shooter component
+            //Tell the game manager that the game has stopped
+            GameObject.FindWithTag("GameController").GetComponent<FlowManager>().gameInProgress = false;
         }
 
         if (health.currentlyInvincible) sprite.color = Color.red; //If the player is in an invincibility period, make them red
         else sprite.color = originalColor; //Otherwise, set them to their original color
+        healthText.GetComponent<TextMeshProUGUI>().text = health.currentHealth.ToString() + " HP"; //Update health UI text
     }
 
     void Move (Vector2 input) //Applies the movement input to the input of the Mover component of the player

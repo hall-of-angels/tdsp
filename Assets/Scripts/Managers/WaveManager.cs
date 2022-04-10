@@ -23,14 +23,13 @@ public class WaveManager : MonoBehaviour
     void Awake()
     {
         mainCam = Camera.main; //Stores reference to main camera
+        SpawnWave(); //Spawns a wave when the game starts
     }
 
     void Update()
     {
-        if (spawnWave) //If the flag to manually spawn a wave is raised
-        {
-            SpawnWave(); //Spawn a wave
-            spawnWave = false; //Set the flag to false
+        if (GameObject.FindWithTag("Enemy") == null) { //Checks whether there are any enemies remaining
+            SpawnWave(); //If not, spawn another wave
         }
     }
 

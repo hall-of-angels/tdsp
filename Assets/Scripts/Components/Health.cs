@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
     //these variables are self explanatory
     [SerializeField] private int maximumHealth = 10;
     [SerializeField] private float invincibilityPeriod = 0.5f; //in seconds
-    [SerializeField] private int currentHealth;
+    public int currentHealth;
     public bool isDead = false; //flag for whether the entity has died
     public bool currentlyInvincible = false; //flag for whether the entity is currently in an invincibility period
 

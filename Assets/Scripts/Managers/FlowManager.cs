@@ -5,20 +5,13 @@ using UnityEngine;
 public class FlowManager : MonoBehaviour
 {
     private GameObject player; //Stores the player GameObject
-
-    private void Awake()
-    {
-    }
+    public bool gameInProgress; //Keeps track of whether there is a game in progress
 
     void Start ()
     {
+        gameInProgress = true; //This just makes sure that the score works, when the main menu is implemented this will be removed
         player = GameObject.FindWithTag("Player"); //Gets the player GameObject
         player.GetComponent<PlayerController>().inputManager.Main.Pause.performed +=_=> PausePlay(); //Makes the game pause when the pause button is pressed
-    }
-
-    void Update ()
-    {
-        
     }
 
     void PausePlay () //Handles pausing and playing

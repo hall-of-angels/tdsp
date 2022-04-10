@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dffdd12770d49217191aceb33565537d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5
   inputX: 0
   inputY: 0
 --- !u!114 &3571150400238539209
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c96406d7c5772eb856e4cc2cb0faa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreValue: 100
   lockOnIncrementPerSecond: 3
 --- !u!1 &3571150401205921270
 GameObject:
