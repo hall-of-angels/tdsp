@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 100
-  lockOnIncrementPerSecond: 7
+  lockOnIncrementPerSecond: 3
 --- !u!1 &3571150401205921270
 GameObject:
   m_ObjectHideFlags: 0

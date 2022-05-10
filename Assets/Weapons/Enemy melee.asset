@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy melee
   m_EditorClassIdentifier: 
   damage: 1
-  rateOfFirePerSecond: 1.9
+  rateOfFirePerSecond: 1.8
   projectileRadius: 1
   speedUnitsPerSecond: 0
   numberOfProjectilesPerShot: 1

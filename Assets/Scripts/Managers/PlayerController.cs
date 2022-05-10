@@ -44,13 +44,12 @@ public class PlayerController : MonoBehaviour
             mover.inputY = 0; 
             this.enabled = false; //Disable the player controller
             shooter.enabled = false; //Disable the shooter component
-            //Tell the game manager that the game has stopped
-            GameObject.FindWithTag("GameController").GetComponent<FlowManager>().gameInProgress = false;
         }
 
         if (health.currentlyInvincible) sprite.color = Color.red; //If the player is in an invincibility period, make them red
         else sprite.color = originalColor; //Otherwise, set them to their original color
-        healthText.GetComponent<TextMeshProUGUI>().text = health.currentHealth.ToString() + " HP"; //Update health UI text
+        //Update health UI text, making sure its value does not exceed the maximum health or go below zero
+        healthText.GetComponent<TextMeshProUGUI>().text = Mathf.Clamp(health.currentHealth, 0, health.maximumHealth).ToString() + " HP"; 
     }
 
     void Move (Vector2 input) //Applies the movement input to the input of the Mover component of the player

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     //these variables are self explanatory
-    [SerializeField] private int maximumHealth = 10;
+    public int maximumHealth = 10;
     [SerializeField] private float invincibilityPeriod = 0.5f; //in seconds
     public int currentHealth;
     public bool isDead = false; //flag for whether the entity has died
